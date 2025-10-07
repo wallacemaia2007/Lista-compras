@@ -50,15 +50,19 @@ button {
   transition: background 0.3s;
 }
 
-button[type="submit"]{
-    background: #007bff;
+button[type='submit'] {
+  background: #007bff;
+
 }
-button[type="button"]{
-    background: #ff0000;
+button[type='button'] {
+  background: #ff0000;
 }
 
-button:hover {
+button:hover[type='submit'] {
   background: #0056b3;
+}
+button:hover[type='button'] {
+  background: #9c0101;
 }
 
 table {
@@ -94,6 +98,14 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
-.item-riscado{
+.item-riscado {
   text-decoration: line-through;
+}
+
+#caixa-vazia {
+  padding: 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 18px;  
+  
 }

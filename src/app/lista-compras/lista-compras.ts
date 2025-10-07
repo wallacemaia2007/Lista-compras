@@ -14,11 +14,26 @@ export class ListaCompras {
   item: string = '';
 
   adicionarItem() {
-    let itemLista = new ItemLista();
-    itemLista.nome = this.item;
-    itemLista.id = this.lista.length + 1;
+    const nome = this.item.trim();
+    if (!nome) {
+      alert('Preencha o campo para adicionar na lista!');
+      this.item = '';
+      return;
+    }
 
-    this.lista.push(itemLista);
+    const jaExiste = this.lista.some((item) => item.nome?.toLowerCase() === nome.toLowerCase());
+
+    if (jaExiste) {
+      alert('Este item já está na lista!');
+      this.item = '';
+      return;
+    }
+
+    const novoItem = new ItemLista();
+    novoItem.nome = nome;
+    novoItem.id = this.lista.length + 1;
+
+    this.lista.push(novoItem);
     this.item = '';
   }
 
@@ -26,7 +41,7 @@ export class ListaCompras {
     itemLista.comprado = !itemLista.comprado;
   }
 
-  limparLita() {
+  limparLista() {
     this.lista = [];
   }
 }

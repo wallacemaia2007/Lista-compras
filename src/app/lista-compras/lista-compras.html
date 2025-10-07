@@ -4,8 +4,8 @@
     <form class="add-item-form" #frm="ngForm" (ngSubmit)="adicionarItem()">
         <input type="text" name="item" id="item" [(ngModel)]="item" placeholder="Digite o nome do item" />
         <button type="submit">Adicionar</button>
-        <button type="button" (click)="limparLita()" >Limpar</button>
-   </form>
+        <button type="button" (click)="limparLista()">Limpar</button>
+    </form>
 
     <table>
         <thead>
@@ -23,7 +23,7 @@
                 <td><input type="checkbox" (click)="riscarItem(elemento)" [checked]="elemento.comprado" /></td>
             </tr>
             }@empty {
-            <tr colspan="3">
+            <tr colspan="3" id="caixa-vazia">
                 Nenhum item adicionado
             </tr>
             }
