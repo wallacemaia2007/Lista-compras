@@ -44,11 +44,17 @@ button {
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
-  background: #007bff;
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
+}
+
+button[type="submit"]{
+    background: #007bff;
+}
+button[type="button"]{
+    background: #ff0000;
 }
 
 button:hover {
@@ -86,4 +92,8 @@ tr:nth-child(even) {
 input[type='checkbox'] {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+.item-riscado{
+  text-decoration: line-through;
 }
